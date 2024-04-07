@@ -8,6 +8,8 @@ import Download from './views/download';
 // ts的拿到函数类型，和函数返回值类型
 import store, { useAppSelector, useAppDispatch, shallowEqualApp } from './store';
 import { changeMessageAction } from './store/modules/counter';
+import AppHeader from './components/app-header';
+import AppFooter from './components/app-footer';
 
 type GetStateFnType = typeof store.getState;
 type IStateFnType = ReturnType<GetStateFnType>;
@@ -29,19 +31,11 @@ const App = () => {
   };
   return (
     <div className="App">
-      <div className="nav">
-        <div>
-          {count} --- {message}
-          <button onClick={handleChangeMessage}>handleChangeMessage</button>
-        </div>
-        <Link to="/discover">发现音乐</Link>
-        <Link to="/mine">我的音乐</Link>
-        <Link to="/focus">我的关注</Link>
-        <Link to="/download">下载个护短</Link>
-      </div>
+      <AppHeader />
       <Suspense fallback="loading.....................">
         <div>{useRoutes(routes)}</div>
       </Suspense>
+      <AppFooter />
     </div>
   );
 };

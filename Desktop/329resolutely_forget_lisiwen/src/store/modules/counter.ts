@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
   // 创建slice片段
@@ -8,8 +8,8 @@ const counterSlice = createSlice({
     message: 'lisiwen'
   },
   reducers: {
-    changeMessageAction(state, { payload }) {
-      state.message = payload;
+    changeMessageAction(state, action: PayloadAction<string>) {
+      state.message = action.payload;
     }
   }
 });
