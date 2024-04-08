@@ -22,7 +22,6 @@ const TapBanner: React.FunctionComponent<IProps> = () => {
   );
   // afterchange 切换图片变背景
   function handAfterChange(currentSlide: number) {
-    console.log('currentSlide', currentSlide);
     setCurrentIndex(currentSlide);
   }
   // function handBeforeChange(currentSlide: number) {
@@ -40,7 +39,6 @@ const TapBanner: React.FunctionComponent<IProps> = () => {
   if (bgImage) {
     bgImage = bgImage + `?imageView&quality=80&blur=40x20`;
   }
-  console.log('bgImage', bgImage);
 
   return (
     <BannerWrapper

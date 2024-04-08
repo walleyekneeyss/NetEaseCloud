@@ -1,7 +1,7 @@
 import { useAppDispatch } from '@/store';
 import React, { memo, useEffect } from 'react'; // ReactNode ReactElement
 import type { FC, ReactNode } from 'react';
-import { featchBannersDataAction } from './store/recommend';
+import { featchBannersDataAction, featchHotRecommendAction } from './store/recommend';
 import TapBanner from './c-cpns/tap-banner';
 // import styles from './Component.module.less';
 // //使用 将className='' 改成 className={styles.类名}
@@ -19,6 +19,7 @@ const Recommend: React.FunctionComponent<IProps> = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(featchBannersDataAction());
+    dispatch(featchHotRecommendAction()); // 获取横幅banner轮播图，热门推荐
   }, []);
   /** return 就是render 的jsx模版语法 */
   return (
