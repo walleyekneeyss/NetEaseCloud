@@ -8,6 +8,7 @@ import TapBanner from './c-cpns/tap-banner';
 // <div className={styles.eg1}> </div>;   less使用
 
 import { RecommendWrapper } from './style';
+import HotRecommend from './c-cpns/hot-recommend';
 interface IProps {
   children?: React.ReactNode;
 }
@@ -25,7 +26,10 @@ const Recommend: React.FunctionComponent<IProps> = () => {
       <RecommendWrapper>
         <TapBanner />
         <div className="content wrap-v2">
-          <div className="left">left</div>
+          <div className="left">
+            <HotRecommend />
+            left
+          </div>
           <div className="right">right</div>
         </div>
       </RecommendWrapper>
