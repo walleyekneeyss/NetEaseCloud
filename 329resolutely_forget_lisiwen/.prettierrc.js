@@ -25,3 +25,6 @@
 //   "bracketSameLine": false, // 将多行HTML(HTML、JSX、Vue、Angular)元素的 > 放在最后一行的末尾，而不是单独放在下一行
 //   "endOfLine": "lf", // 换行符使用 lf
 //   "vueIndentScriptAndStyle": false, // 是否对vue中的script及style标签缩进
+
+
+
