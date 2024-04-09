@@ -3,6 +3,7 @@ import type { FC, ReactNode } from 'react';
 import { RecommendWrapper } from './style';
 import AreaHeaderV1 from '@/components/area-header-v1';
 import { shallowEqualApp, useAppSelector } from '@/store';
+import SongMenuItem from '@/components/song-menu-item';
 
 interface IProps {
   children?: React.ReactNode;
@@ -18,13 +19,9 @@ const HotRecommend: React.FunctionComponent<IProps> = () => {
   return (
     <RecommendWrapper>
       <AreaHeaderV1 title="热门推荐" keywords={['华语', '流星', '摇滚', '民谣', '电子']} moreLink="/discover/songs" />
-      <div className="hot-recommend">
+      <div className="recommend-list">
         {hotRecommends.map((item, index) => {
-          return (
-            <div className="item" key={item.name}>
-              {item.name}
-            </div>
-          );
+          return <SongMenuItem key={item.id} itemData={item} />;
         })}
       </div>
     </RecommendWrapper>

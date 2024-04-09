@@ -2,7 +2,8 @@ import React, { memo } from 'react'; // ReactNode ReactElement
 import type { FC, ReactNode } from 'react';
 // import './index.css';
 // import styles from './index.module.scss';
-import styles from './index.module.css';
+import styles from './index.module.less';
+
 interface IProps {
   children?: React.ReactNode;
 }
