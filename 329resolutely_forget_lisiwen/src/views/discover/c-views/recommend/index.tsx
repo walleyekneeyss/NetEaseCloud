@@ -1,7 +1,7 @@
 import { useAppDispatch } from '@/store';
 import React, { memo, useEffect } from 'react'; // ReactNode ReactElement
 import type { FC, ReactNode } from 'react';
-import { featchBannersDataAction, featchHotRecommendAction } from './store/recommend';
+import { featchBannersDataAction, featchHotRecommendAction, featchNewAlbumAction } from './store/recommend';
 import TapBanner from './c-cpns/tap-banner';
 // import styles from './Component.module.less';
 // //使用 将className='' 改成 className={styles.类名}
@@ -9,6 +9,7 @@ import TapBanner from './c-cpns/tap-banner';
 
 import { RecommendWrapper } from './style';
 import HotRecommend from './c-cpns/hot-recommend';
+import NewAlbum from './c-cpns/new-album';
 interface IProps {
   children?: React.ReactNode;
 }
@@ -20,6 +21,7 @@ const Recommend: React.FunctionComponent<IProps> = () => {
   useEffect(() => {
     dispatch(featchBannersDataAction());
     dispatch(featchHotRecommendAction()); // 获取横幅banner轮播图，热门推荐
+    dispatch(featchNewAlbumAction()); // 获取新碟上架数据
   }, []);
   /** return 就是render 的jsx模版语法 */
   return (
@@ -29,7 +31,7 @@ const Recommend: React.FunctionComponent<IProps> = () => {
         <div className="content wrap-v2">
           <div className="left">
             <HotRecommend />
-            left
+            <NewAlbum />
           </div>
           <div className="right">right</div>
         </div>

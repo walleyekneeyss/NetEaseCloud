@@ -5,11 +5,18 @@ export function getBanners() {
   });
 }
 
-export function getHotRecommend(limit = 30) {
+export function getHotRecommend(limit = 100) {
   return request({
     url: '/personalized',
     params: {
-      limit: 8
+      limit: limit
     }
+  });
+}
+
+export function getNewAlbum() {
+  return request({
+    url: '/album/newest',
+    params: {}
   });
 }
