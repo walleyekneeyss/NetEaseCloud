@@ -287,7 +287,7 @@ const AppFooter: React.FunctionComponent<IProps> = () => {
                 margin: '0 auto',
                 lineHeight: '24px',
                 color: '#666',
-                paddingTop: '47px'
+                paddingTop: '60px'
               }}
             >
               <p className="link" id="music-link">
