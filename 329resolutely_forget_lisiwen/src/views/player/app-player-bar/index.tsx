@@ -12,6 +12,22 @@ interface IProps {
 }
 
 const AppPlayerBar: React.FunctionComponent<IProps> = () => {
+  const [progress, setProgress] = useState<number | undefined>(undefined);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState<number | undefined>(undefined);
+  function hadleTimeUpdate() {
+    let currentTime;
+    if (audioRef.current && audioRef.current.currentTime !== undefined) {
+      currentTime = audioRef.current.currentTime * 1000;
+    }
+
+    let progress;
+    if (currentTime !== undefined && duration !== 0) {
+      progress = (currentTime / duration) * 100;
+    }
+    setProgress(progress);
+    setCurrentTime(currentTime);
+  }
   const playMouseEnter = () => {
     if (backgroundPosition === -204) {
       setPlayerStyle({ backgroundPosition: '-40px -204px' });
@@ -40,7 +56,7 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
   }
   // &本来这一块交叉类型了children 现在由自己开发者自己在Iprops中决定是否要children
   const { currentSong } = useAppSelector(
-    state => ({
+    (state: { player: { currentSong: any } }) => ({
       currentSong: state.player.currentSong
     }),
     shallowEqualApp
@@ -61,6 +77,7 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
         console.log('歌曲播放失败', err);
         setIsPlaying(false);
       });
+    setDuration(currentSong.dt);
   }, [currentSong]);
   const [isBannerVisible, setIsBannerVisible] = useState(false);
   const handleMouseEnter = () => {
@@ -100,11 +117,27 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
               <span className="singer-name">{currentSong?.ar[0]?.name}</span>
             </div>
             <div className="progress">
-              <Slider />
+              <Slider value={progress} step={0.4} tooltip={{ formatter: null }} />
               <div className="time">
-                <span className="current">0:52</span>
+                <span className="current">
+                  {currentTime
+                    ? Math.floor(currentTime / 1000 / 60) +
+                      ':' +
+                      (Math.floor(currentTime / 1000) % 60 < 10
+                        ? '0' + (Math.floor(currentTime / 1000) % 60)
+                        : Math.floor(currentTime / 1000) % 60)
+                    : '0:00'}
+                </span>
                 <span className="divider">/</span>
-                <span className="duration">4:35</span>
+                <span className="duration">
+                  {duration
+                    ? Math.floor(duration / 1000 / 60) +
+                      ':' +
+                      (Math.floor(duration / 1000) % 60 < 10
+                        ? '0' + (Math.floor(duration / 1000) % 60)
+                        : Math.floor(duration / 1000) % 60)
+                    : '0:00'}
+                </span>
               </div>
             </div>
           </div>
@@ -122,7 +155,7 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
           </div>
         </BarOperator>
       </div>
-      <audio ref={audioRef} src={getPlayUrl(currentSong.id)}></audio>
+      <audio ref={audioRef} src={getPlayUrl(currentSong.id)} onTimeUpdate={hadleTimeUpdate}></audio>
     </PlayerBarWrapper>
   );
 };

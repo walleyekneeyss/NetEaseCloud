@@ -6,7 +6,7 @@ export function getBanners() {
   });
 }
 
-export function getHotRecommend(limit = 8) {
+export function getHotRecommend(limit = 100) {
   // 获取热门推荐的歌单
   return request({
     url: '/personalized',

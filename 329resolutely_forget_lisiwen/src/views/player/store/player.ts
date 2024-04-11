@@ -5,14 +5,14 @@ interface IPlayerState {
 }
 const initialState: IPlayerState = {
   currentSong: {
-    name: '虚拟',
-    id: 421423808,
+    name: '不露声色',
+    id: 470759757,
     pst: 0,
     t: 0,
     ar: [
       {
-        id: 1007170,
-        name: '陈粒',
+        id: 1071031,
+        name: 'Jam',
         tns: [],
         alias: []
       }
@@ -22,49 +22,50 @@ const initialState: IPlayerState = {
     st: 0,
     rt: null,
     fee: 8,
-    v: 41,
+    v: 29,
     crbt: null,
     cf: '',
     al: {
-      id: 34780579,
-      name: '小梦大半',
-      picUrl: 'https://p1.music.126.net/HQxTggMCB7AHUXN-ZFEtmA==/1371091013186741.jpg',
+      id: 35346446,
+      name: '不露声色',
+      picUrl: 'https://p1.music.126.net/o9H3nhgOCK7zYQ4DGZkd5A==/19066631137330769.jpg',
       tns: [],
-      pic: 1371091013186741
+      pic_str: '19066631137330769',
+      pic: 19066631137330770
     },
-    dt: 240626,
+    dt: 305593,
     h: {
       br: 320000,
       fid: 0,
-      size: 9627733,
-      vd: -7979,
+      size: 12226395,
+      vd: -39686,
       sr: 44100
     },
     m: {
       br: 192000,
       fid: 0,
-      size: 5776657,
-      vd: -5352,
+      size: 7335854,
+      vd: -37054,
       sr: 44100
     },
     l: {
       br: 128000,
       fid: 0,
-      size: 3851119,
-      vd: -3597,
+      size: 4890584,
+      vd: -35282,
       sr: 44100
     },
     sq: {
-      br: 765421,
+      br: 761327,
       fid: 0,
-      size: 23022596,
-      vd: -9752,
+      size: 29082050,
+      vd: -39752,
       sr: 44100
     },
     hr: null,
     a: null,
     cd: '1',
-    no: 9,
+    no: 1,
     rtUrl: null,
     ftype: 0,
     rtUrls: [],
@@ -76,18 +77,18 @@ const initialState: IPlayerState = {
     originSongSimpleData: null,
     tagPicList: null,
     resourceState: true,
-    version: 41,
+    version: 29,
     songJumpInfo: null,
     entertainmentTags: null,
     awardTags: null,
     single: 0,
     noCopyrightRcmd: null,
-    mv: 5368127,
-    mst: 9,
-    cp: 1416476,
+    mv: 0,
     rtype: 0,
     rurl: null,
-    publishTime: 1469462400007
+    mst: 9,
+    cp: 0,
+    publishTime: 1491753600007
   }
 };
 
