@@ -1,24 +1,24 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+// import React, { memo } from 'react';
+// import PropTypes from 'prop-types';
 
-import { HeaderWrapper } from './style';
+// import { HeaderWrapper } from './style';
 
-const HYThemeHeaderSmall = memo(function (props) {
-  const { title, more } = props;
-  HYThemeHeaderSmall.displayName = 'HYThemeHeaderSmall';
-  return (
-    <HeaderWrapper>
-      <h3>{title}</h3>
-      <a href="/abc">{more}</a>
-    </HeaderWrapper>
-  );
-});
+// const HYThemeHeaderSmall = memo(function (props) {
+//   const { title, more } = props;
+//   HYThemeHeaderSmall.displayName = 'HYThemeHeaderSmall';
+//   return (
+//     <HeaderWrapper>
+//       <h3>{title}</h3>
+//       <a href="/abc">{more}</a>
+//     </HeaderWrapper>
+//   );
+// });
 
-HYThemeHeaderSmall.defaultProps = {};
+// HYThemeHeaderSmall.defaultProps = {};
 
-HYThemeHeaderSmall.propTypes = {
-  title: PropTypes.string.isRequired,
-  more: PropTypes.string
-};
+// HYThemeHeaderSmall.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   more: PropTypes.string
+// };
 
-export default HYThemeHeaderSmall;
+// export default HYThemeHeaderSmall;

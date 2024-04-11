@@ -4,11 +4,12 @@ import { settleSingers } from '@/assets/data/local-data';
 import HYThemeHeaderSmall from '@/components/theme-header-small';
 import { SetterSongerWrapper } from './style';
 import { getImageSize } from '@/utils/format';
+import AreaHeaderV1 from '@/components/area-header-v1';
 
 export default memo(function HYSettleSinger() {
   return (
     <SetterSongerWrapper>
-      <HYThemeHeaderSmall title="入驻歌手" more="查看全部>" />
+      <AreaHeaderV1 title="入驻歌手" more="查看全部>" />
       <div className="singer-list">
         {settleSingers &&
           settleSingers.map((item, index) => {

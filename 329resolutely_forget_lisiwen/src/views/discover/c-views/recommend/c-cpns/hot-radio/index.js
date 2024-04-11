@@ -4,11 +4,12 @@ import { hotRadios } from '@/assets/data/local-data';
 
 import HYThemeHeaderSmall from '@/components/theme-header-small';
 import { HotRadioWrapper } from './style';
+import AreaHeaderV1 from '@/components/area-header-v1';
 
 export default memo(function HYHotRadio() {
   return (
     <HotRadioWrapper>
-      <HYThemeHeaderSmall title="热门主播" />
+      <AreaHeaderV1 title="热门主播" />
       <div className="radio-list">
         {hotRadios &&
           hotRadios.map((item, index) => {
