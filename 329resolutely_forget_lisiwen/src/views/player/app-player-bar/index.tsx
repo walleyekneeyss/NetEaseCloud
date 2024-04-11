@@ -3,6 +3,8 @@ import type { FC, ReactNode } from 'react';
 import { PlayerBarWrapper, BarControl, BarPlayerInfo, BarOperator } from './style';
 import { NavLink } from 'react-router-dom';
 import { Slider } from 'antd';
+import { shallowEqualApp, useAppSelector } from '@/store';
+import { getImageSize } from '@/utils/format';
 
 interface IProps {
   children?: React.ReactNode;
@@ -10,6 +12,12 @@ interface IProps {
 
 const AppPlayerBar: React.FunctionComponent<IProps> = () => {
   // &本来这一块交叉类型了children 现在由自己开发者自己在Iprops中决定是否要children
+  const { currentSong } = useAppSelector(
+    state => ({
+      currentSong: state.player.currentSong
+    }),
+    shallowEqualApp
+  );
   const [isBannerVisible, setIsBannerVisible] = useState(false);
   const handleMouseEnter = () => {
     setIsBannerVisible(true);
@@ -31,15 +39,15 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
           <button className="sprite_playbar btn next"></button>
         </BarControl>
         <BarPlayerInfo>
-          <div className="image">
+          <div>
             <NavLink to="/discover/player">
-              <img src="https://p2.music.126.net/JlPoON3LMftOcCLMdM5MUQ==/109951169347110253.jpg?param=34y34" alt="" />
+              <img className="image" src={getImageSize(currentSong?.al?.picUrl, 50)} alt="" />
             </NavLink>
           </div>
           <div className="info">
             <div className="song">
-              <span className="song-name">siluodadao</span>
-              <span className="singer-name">liangbo</span>
+              <span className="song-name">{currentSong.name}</span>
+              <span className="singer-name">{currentSong?.ar[0]?.name}</span>
             </div>
             <div className="progress">
               <Slider />

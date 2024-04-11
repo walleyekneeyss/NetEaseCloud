@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useSelector, TypedUseSelectorHook, shallowEqual, useDispatch } from 'react-redux'; // 初始store state shallowEqual 浅层比较
 import counterReducer from './modules/counter';
 import recommendReducer from '../views/discover/c-views/recommend/store/recommend';
+import playerReducer from '../views/player/store/player';
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
-    recommend: recommendReducer
+    recommend: recommendReducer,
+    player: playerReducer
   }
 });
 
