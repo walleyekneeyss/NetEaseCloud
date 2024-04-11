@@ -76,7 +76,7 @@ const TapBanner: React.FunctionComponent<IProps> = () => {
             {banners.map((item, index) => {
               return (
                 <li key={item.imageUrl}>
-                  <span className={classNames('item', { active: index === currentIndex })}></span>
+                  <span className={classNames({ active: index === currentIndex })}></span>
                 </li>
               );
             })}

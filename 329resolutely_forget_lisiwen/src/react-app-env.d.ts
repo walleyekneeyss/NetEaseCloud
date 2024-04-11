@@ -9,6 +9,7 @@ declare namespace NodeJS {
   }
 }
 
+declare module 'lodash-es';
 declare module '*.less' {
   const content: { [className: string]: string };
   export default content;
