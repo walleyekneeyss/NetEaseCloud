@@ -125,6 +125,39 @@ export const hotRadios = [
   }
 ];
 
+// 入驻歌手
+export const settleSingers = [
+  {
+    id: 1,
+    img1v1Url: 'https://p2.music.126.net/EhK1QvSnOx5R-Tn4T-Byig==/109951169385115148.jpg',
+    alias: ['来自远方'],
+    name: '亲切的问候'
+  },
+  {
+    id: 2,
+    img1v1Url: 'https://p1.music.126.net/fbAdy2s1fTAianFRNtAK6w==/109951169391365719.jpg',
+    alias: [],
+    name: '新型歌手李大爷'
+  },
+  {
+    id: 3,
+    img1v1Url: 'https://p2.music.126.net/JlPoON3LMftOcCLMdM5MUQ==/109951169347110253.jpg',
+    alias: ['张瑜慢点扭'],
+    name: '冰爱听'
+  },
+  {
+    id: 4,
+    img1v1Url: 'https://p2.music.126.net/lRE0QHTUkA_DxlB14uzSqg==/109951164207703933.jpg',
+    alias: ['亚斯啦雷'],
+    name: '你多跳冰爱听'
+  },
+  {
+    id: 5,
+    img1v1Url: 'https://p2.music.126.net/g5MsN6NwYPHBKtiMaDG8_g==/109951163069746537.jpg',
+    alias: ['梁非凡'],
+    name: 'sliwine'
+  }
+];
 // 歌手类别
 export const artistCategories = [
   {
