@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+const divElement: any = document.querySelector('div[data-is-playing]');
+const isPlaying = divElement?.getAttribute('data-is-playing') === 'true';
+console.log('isPlaying', isPlaying);
+import styled, { StyledComponent } from 'styled-components';
+
+// background-position: -40px ${props => (props.isPlaying ? '-165px' : '-204px')};
+// background-position: 0 ${props => (props.isPlaying ? '-165px' : '-204px')};
 
 export const PlayerBarWrapper = styled.div`
   position: fixed;
@@ -21,7 +27,11 @@ export const PlayerBarWrapper = styled.div`
     height: 47px;
   }
 `;
-export const BarControl = styled.div`
+interface IBarControlProps {
+  isplaying?: boolean;
+}
+
+export const BarControl: StyledComponent<'div', any, IBarControlProps, never> = styled.div`
   display: flex;
   align-items: center;
 
@@ -37,17 +47,27 @@ export const BarControl = styled.div`
 
   .prev {
     background-position: 0 -130px;
+    &:hover {
+      background-position: -30px -130px;
+    }
   }
 
   .play {
     width: 36px;
     height: 36px;
     margin: 0 8px;
-    background-position: 0 -165px;
+    background-position: 0 -204px;
+
+    &:hover {
+      background-position: -40px -204px;
+    }
   }
 
   .next {
     background-position: -80px -130px;
+    &:hover {
+      background-position: -110px -130px;
+    }
   }
 `;
 export const BarPlayerInfo = styled.div`

@@ -5,14 +5,14 @@ interface IPlayerState {
 }
 const initialState: IPlayerState = {
   currentSong: {
-    name: '海阔天空',
-    id: 346089,
+    name: '虚拟',
+    id: 421423808,
     pst: 0,
     t: 0,
     ar: [
       {
-        id: 11127,
-        name: 'Beyond',
+        id: 1007170,
+        name: '陈粒',
         tns: [],
         alias: []
       }
@@ -20,76 +20,74 @@ const initialState: IPlayerState = {
     alia: [],
     pop: 100,
     st: 0,
-    rt: '600902000004240302',
+    rt: null,
     fee: 8,
-    v: 52,
+    v: 41,
     crbt: null,
     cf: '',
     al: {
-      id: 34110,
-      name: 'Beyond 25th Anniversary',
-      picUrl: 'https://p2.music.126.net/zZtUDuWk6qIe3ezMt4UMjg==/109951165796417308.jpg',
+      id: 34780579,
+      name: '小梦大半',
+      picUrl: 'https://p1.music.126.net/HQxTggMCB7AHUXN-ZFEtmA==/1371091013186741.jpg',
       tns: [],
-      pic_str: '109951165796417308',
-      pic: 109951165796417310
+      pic: 1371091013186741
     },
-    dt: 322560,
+    dt: 240626,
     h: {
       br: 320000,
       fid: 0,
-      size: 12905578,
-      vd: -49200,
+      size: 9627733,
+      vd: -7979,
       sr: 44100
     },
     m: {
       br: 192000,
       fid: 0,
-      size: 7743364,
-      vd: -46622,
+      size: 5776657,
+      vd: -5352,
       sr: 44100
     },
     l: {
       br: 128000,
       fid: 0,
-      size: 5162257,
-      vd: -44981,
+      size: 3851119,
+      vd: -3597,
       sr: 44100
     },
     sq: {
-      br: 870405,
+      br: 765421,
       fid: 0,
-      size: 35094811,
-      vd: -49193,
+      size: 23022596,
+      vd: -9752,
       sr: 44100
     },
     hr: null,
     a: null,
-    cd: '03',
-    no: 6,
+    cd: '1',
+    no: 9,
     rtUrl: null,
     ftype: 0,
     rtUrls: [],
     djId: 0,
-    copyright: 1,
+    copyright: 2,
     s_id: 0,
     mark: 17179877376,
     originCoverType: 1,
     originSongSimpleData: null,
     tagPicList: null,
     resourceState: true,
-    version: 52,
+    version: 41,
     songJumpInfo: null,
     entertainmentTags: null,
     awardTags: null,
     single: 0,
     noCopyrightRcmd: null,
-    mv: 5501497,
+    mv: 5368127,
+    mst: 9,
+    cp: 1416476,
     rtype: 0,
     rurl: null,
-    mst: 9,
-    cp: 7002,
-    publishTime: 1205164800000,
-    tns: ['Boundless Oceans, Vast Skies']
+    publishTime: 1469462400007
   }
 };
 

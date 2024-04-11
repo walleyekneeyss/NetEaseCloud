@@ -113,7 +113,7 @@ devDependencies:
     specifier: ^1.5.0
     version: 1.5.0(webpack@5.91.0)
   styled-components:
-    specifier: ^5.1.0
+    specifier: ^5.2.0
     version: 5.3.11(@babel/core@7.24.3)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
   thread-loader:
     specifier: ^4.0.2

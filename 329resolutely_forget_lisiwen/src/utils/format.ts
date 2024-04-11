@@ -18,3 +18,7 @@ export function formatTime(time: number) {
 export function getImageSize(imageUrl: string, width: number, height: number = width) {
   return imageUrl + `?param=${width}x${height}`;
 }
+
+export function getPlayUrl(id: any) {
+  return `https://music.163.com/song/media/outer/url?id=${id}.mp3`;
+}
