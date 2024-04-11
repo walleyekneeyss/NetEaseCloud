@@ -52,7 +52,7 @@ const App = () => {
       </Suspense>
       <AppFooter />
       {/* AppPlayerBar 播放器横幅 工具栏 */}
-      <div className={` ${isVisible ? 'active' : ''}`} onMouseEnter={debounce(handleMouseEnter, 500)}>
+      <div className={` ${isVisible ? 'activecc' : ''}`} onMouseEnter={debounce(handleMouseEnter, 500)}>
         <button onClick={debounce(handleMouseEnter, 500)}>这是一个元素,需要点一下</button>
       </div>
       {isVisible && (
