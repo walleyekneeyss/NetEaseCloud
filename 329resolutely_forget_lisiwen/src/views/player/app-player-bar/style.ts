@@ -51,8 +51,19 @@ export const BarControl: StyledComponent<'div', any, IBarControlProps, never> = 
       background-position: -30px -130px;
     }
   }
-
-  .play {
+  // .sc-fqkvVR gwbtfV sprite_playbar .play:hover {
+  //   background-position: 0 -204px;
+  //   &:hover {
+  //     background-position: -40px -204px !important;
+  //   }
+  // }
+  // .hover-effect-2 {
+  //   background-position: 0 -165px;
+  //   &:hover {
+  //     background-position: -40px -165px;
+  //   }
+  // }
+  .hover-effect-1 {
     width: 36px;
     height: 36px;
     margin: 0 8px;
@@ -60,6 +71,16 @@ export const BarControl: StyledComponent<'div', any, IBarControlProps, never> = 
 
     &:hover {
       background-position: -40px -204px;
+    }
+  }
+  .hover-effect-2 {
+    width: 36px;
+    height: 36px;
+    margin: 0 8px;
+    background-position: 0 -165px;
+
+    &:hover {
+      background-position: -40px -165px;
     }
   }
 

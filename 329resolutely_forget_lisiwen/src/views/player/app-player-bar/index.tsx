@@ -12,6 +12,7 @@ interface IProps {
 }
 
 const AppPlayerBar: React.FunctionComponent<IProps> = () => {
+  const [hoverEffectClassName, setHoverEffectClassName] = useState('hover-effect-1');
   const [progress, setProgress] = useState<number | undefined>(undefined);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState<number | undefined>(undefined);
@@ -29,18 +30,18 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
     setCurrentTime(currentTime);
   }
   const playMouseEnter = () => {
-    if (backgroundPosition === -204) {
-      setPlayerStyle({ backgroundPosition: '-40px -204px' });
-    } else if (backgroundPosition === -165) {
-      setPlayerStyle({ backgroundPosition: '-40px -165px' });
-    }
+    // if (backgroundPosition === -204) {
+    //   setPlayerStyle({ backgroundPosition: '-40px -204px' });
+    // } else if (backgroundPosition === -165) {
+    //   setPlayerStyle({ backgroundPosition: '-40px -165px' });
+    // }
   };
 
   const playMouseLeave = () => {
-    setPlayerStyle({});
+    // setPlayerStyle({});
   };
   const [playerStyle, setPlayerStyle] = useState({});
-  const [backgroundPosition, setBackgroundPosition] = useState(-204);
+  const [backgroundPosition, setBackgroundPosition] = useState('pause'); // 模拟背景位置 204关闭 165打开状态
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   function playClick() {
@@ -48,10 +49,14 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
 
     !isPlaying ? audioRef.current?.play().catch(() => setIsPlaying(false)) : audioRef.current?.pause();
     setIsPlaying(!isPlaying);
-    if (backgroundPosition === -204) {
-      setBackgroundPosition(-165);
+    if (backgroundPosition === 'pause') {
+      console.log('204关闭进入了吗');
+      setBackgroundPosition('play');
+      setHoverEffectClassName('hover-effect-2');
     } else {
-      setBackgroundPosition(-204);
+      console.log('165打开进入了吗');
+      setBackgroundPosition('pause');
+      setHoverEffectClassName('hover-effect-1');
     }
   }
   // &本来这一块交叉类型了children 现在由自己开发者自己在Iprops中决定是否要children
@@ -86,7 +91,7 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
   const handleMouseLeave = () => {
     setIsBannerVisible(false); // 处理划入划出时的paliyerbar的显示隐藏
   };
-
+  const combinedClassName = `sprite_playbar btn play ${hoverEffectClassName}`;
   return (
     <PlayerBarWrapper
       className={` ${isBannerVisible ? 'sprite_playbar' : 'sprite_playbar'}`}
@@ -97,11 +102,11 @@ const AppPlayerBar: React.FunctionComponent<IProps> = () => {
         <BarControl data-is-playing={isPlaying}>
           <button className="sprite_playbar btn prev"></button>
           <button
-            className="sprite_playbar btn play"
+            className={combinedClassName}
             onClick={playClick}
             // onMouseEnter={playMouseEnter}
             // onMouseLeave={playMouseLeave}
-            style={{ backgroundPosition: `0 ${backgroundPosition}px` }}
+            // style={{ backgroundPosition: `0 ${backgroundPosition}px` }}
           ></button>
           <button className="sprite_playbar btn next"></button>
         </BarControl>
